@@ -48,10 +48,10 @@
     "uuid4": "^2.0.3"
   },
   "devDependencies": {
+    "@firebase/app-types": "^0.9.3",
     "@firebase/auth-types": "^0.13.0",
     "@tailwindcss/postcss": "^4",
-    "@types/firebase": "^3.2.3",
-    "@types/node": "^20",
+    "@types/node": "^20.17.24",
     "@types/pg": "^8.11.11",
     "@types/react": "^19",
     "@types/react-dom": "^19",
