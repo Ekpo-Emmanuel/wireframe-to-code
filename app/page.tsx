@@ -91,7 +91,7 @@ export default function Home() {
                 Transform your design process with our powerful AI-driven
                 solution
               </p>
-            </div>
+          </div>
 
             <div className="grid gap-8 md:grid-cols-3">
               {/* Feature 1 */}
@@ -106,7 +106,7 @@ export default function Home() {
                   Simply upload your design mockup or wireframe image. We
                   support various formats including PNG, JPG, and SVG.
                 </p>
-              </div>
+          </div>
 
               {/* Feature 2 */}
               <div className="bg-white dark:bg-gray-800 p-6  shadow-md border border-gray-100 dark:border-gray-700 transition-all hover:shadow-lg">
@@ -120,7 +120,7 @@ export default function Home() {
                   Our advanced AI engine analyzes your design, identifying UI
                   components, layout structure, and styling details.
                 </p>
-              </div>
+          </div>
 
               {/* Feature 3 */}
               <div className="bg-white dark:bg-gray-800 p-6  shadow-md border border-gray-100 dark:border-gray-700 transition-all hover:shadow-lg">
@@ -134,9 +134,9 @@ export default function Home() {
                   Receive clean, responsive code that accurately reflects your
                   design. Copy, download, or view the live preview instantly.
                 </p>
-              </div>
-            </div>
           </div>
+        </div>
+      </div>
 
           {/* Testimonial/Stats Section */}
           <div className="mt-20 bg-gray-50 dark:bg-gray-800/50 p-8 ">
@@ -148,27 +148,27 @@ export default function Home() {
                 <p className="mt-2 text-gray-600 dark:text-gray-300">
                   Time saved compared to manual coding
                 </p>
-              </div>
+      </div>
 
               <div className="flex flex-col items-center text-center">
                 <span className="text-3xl lg:text-4xl font-bold text-blue-600 dark:text-blue-400">
                   100+
-                </span>
+              </span>
                 <p className="mt-2 text-gray-600 dark:text-gray-300">
                   UI components recognized
                 </p>
-              </div>
+            </div>
 
               <div className="flex flex-col items-center text-center">
                 <span className="text-3xl lg:text-4xl font-bold text-blue-600 dark:text-blue-400">
                   24/7
-                </span>
+              </span>
                 <p className="mt-2 text-gray-600 dark:text-gray-300">
                   Available whenever inspiration strikes
                 </p>
-              </div>
             </div>
-          </div>
+            </div>
+            </div>
 
           {/* CTA Section */}
           <div className="mt-20 text-center">
@@ -210,7 +210,7 @@ export default function Home() {
                 </Authentication>
               )}
             </div>
-          </div>
+            </div>
         </div>
       </section>
     </>
