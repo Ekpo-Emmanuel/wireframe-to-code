@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from "react";
 import {
-  Sidebar,
-  SidebarContent,
-  SidebarFooter,
-  SidebarGroup,
-  SidebarGroupContent,
-  SidebarHeader,
-  SidebarMenu,
+    Sidebar,
+    SidebarContent,
+    SidebarFooter,
+    SidebarGroup,
+    SidebarGroupContent,
+    SidebarHeader,
+    SidebarMenu,
   SidebarTrigger,
   SidebarMenuItem,
   SidebarMenuSubItem,
-  SidebarMenuButton,
+    SidebarMenuButton,
   useSidebar,
   SidebarMenuSub,
 } from "@/components/ui/sidebar";
@@ -54,14 +54,14 @@ import { cn } from "@/lib/utils";
 const mainItems = [
   {
     title: "Dashboard",
-    url: "/dashboard",
-    icon: Home,
+        url: "/dashboard",
+        icon: Home,
     description: "Main workspace",
-  },
-  {
+    },
+    {
     title: "Designs",
-    url: "/designs",
-    icon: Paintbrush,
+        url: "/designs",
+        icon: Paintbrush,
     description: "Your wireframes",
     hasSubmenu: true,
   },
@@ -69,7 +69,7 @@ const mainItems = [
 
 export function AppSidebar() {
   const { user } = useAuth();
-  const path = usePathname();
+    const path = usePathname();
   const router = useRouter();
   const [recentDesigns, setRecentDesigns] = useState<RECORD[]>([]);
   const [isLoading, setIsLoading] = useState(false);
@@ -128,7 +128,7 @@ export function AppSidebar() {
     router.push("/dashboard");
   };
 
-  return (
+    return (
     <Sidebar collapsible="icon">
       <div
         className={cn(
@@ -226,7 +226,7 @@ export function AppSidebar() {
                               <SidebarMenuSubItem>
                                 <div className="px-3 py-2 text-xs text-gray-500 dark:text-gray-400">
                                   No recent designs
-                                </div>
+                    </div>
                               </SidebarMenuSubItem>
                             )}
                           </SidebarMenuSub>
@@ -252,11 +252,11 @@ export function AppSidebar() {
                     </SidebarMenuItem>
                   )}
                 </div>
-              ))}
-            </SidebarMenu>
-          </SidebarGroupContent>
-        </SidebarGroup>
-      </SidebarContent>
+                            ))}
+                        </SidebarMenu>
+                    </SidebarGroupContent>
+                </SidebarGroup>
+            </SidebarContent>
 
       <SidebarFooter className="border-t border-gray-200 dark:border-gray-700 pt-4">
         {isCollapsed ? (
@@ -342,7 +342,7 @@ export function AppSidebar() {
             )}
           </div>
         )}
-      </SidebarFooter>
-    </Sidebar>
+            </SidebarFooter>
+        </Sidebar>
   );
 }
