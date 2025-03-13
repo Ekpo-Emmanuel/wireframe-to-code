@@ -15,11 +15,11 @@ import Image from "next/image";
 import uuid4 from "uuid4";
 import React, { ChangeEvent, useState } from "react";
 import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
+    Select,
+    SelectContent,
+    SelectItem,
+    SelectTrigger,
+    SelectValue,
 } from "@/components/ui/select";
 import { supabase } from "@/configs/supabaseConfig";
 import axios from "axios";
@@ -30,29 +30,29 @@ import { toast } from "sonner";
 
 function ImageUpload() {
   const [previewUrl, setPreviewUrl] = useState<string | null>(null);
-  const [file, setFile] = useState<any>();
-  const [model, setModel] = useState<string>();
-  const [description, setDescription] = useState<string>();
+    const [file, setFile] = useState<any>();
+    const [model, setModel] = useState<string>();
+    const [description, setDescription] = useState<string>();
   const { user } = useAuth();
-  const router = useRouter();
-  const [loading, setLoading] = useState(false);
+    const router = useRouter();
+    const [loading, setLoading] = useState(false);
 
   const handleImageSelect = (event: ChangeEvent<HTMLInputElement>) => {
-    const files = event.target.files;
-    if (files) {
-      const imageUrl = URL.createObjectURL(files[0]);
-      setFile(files[0]);
-      setPreviewUrl(imageUrl);
-    }
+        const files = event.target.files;
+        if (files) {
+            const imageUrl = URL.createObjectURL(files[0]);
+            setFile(files[0]);
+            setPreviewUrl(imageUrl);
+        }
   };
 
   const handleConvertToCode = async () => {
-    if (!file || !model || !description) {
+        if (!file || !model || !description) {
       toast.error("Please complete all fields before continuing");
-      return;
-    }
+            return;
+        }
 
-    setLoading(true);
+        setLoading(true);
 
     try {
       const fileName = `${Date.now()}_${uuid4()}.png`;
@@ -76,33 +76,33 @@ function ImageUpload() {
 
       const imageUrl = urlData.publicUrl;
 
-      const uid = uuid4();
+        const uid = uuid4();
       const result = await axios.post("/api/wireframe-to-code", {
-        uid: uid,
-        description: description,
-        imageUrl: imageUrl,
-        model: model,
+            uid: uid,
+            description: description,
+            imageUrl: imageUrl,
+            model: model,
         email: user?.email,
-      });
+        });
 
-      if (result.data?.error) {
+        if (result.data?.error) {
         toast.error(
           "Not enough credits available. Please purchase more credits to continue."
         );
-        setLoading(false);
-        return;
-      }
+            setLoading(false);
+            return;
+        }
 
       setLoading(false);
       toast.success("Conversion started successfully!");
       router.push("/view-code/" + uid);
     } catch (error: any) {
       toast.error(`Upload failed: ${error.message}`);
-      setLoading(false);
+        setLoading(false);
     }
   };
 
-  return (
+    return (
     <div className="mt-8">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {/* Image Upload Section */}
@@ -133,13 +133,13 @@ function ImageUpload() {
                     <Upload className="h-4 w-4 mr-2" />
                     Select Image
                   </div>
-                </label>
+                        </label>
                 <input
                   type="file"
                   id="imageSelect"
                   className="hidden"
                   accept="image/*"
-                  multiple={false}
+                        multiple={false}
                   onChange={handleImageSelect}
                 />
                 {/* <p className="mt-4 text-xs text-gray-500 dark:text-gray-400">
@@ -158,7 +158,7 @@ function ImageUpload() {
                   />
                 </div>
                 <button
-                  onClick={() => setPreviewUrl(null)}
+                            onClick={() => setPreviewUrl(null)}
                   className="absolute top-2 right-2 p-1.5 bg-white/80 dark:bg-gray-800/80 text-gray-700 dark:text-gray-300 hover:text-red-500 dark:hover:text-red-400"
                 >
                   <X className="h-4 w-4" />
@@ -184,19 +184,19 @@ function ImageUpload() {
             <p className="text-sm text-gray-500 dark:text-gray-400">
               Select model and describe your requirements
             </p>
-          </div>
+                    </div>
 
           <div className="p-6 space-y-6">
             <div className="space-y-2">
               <label className="text-sm font-medium text-gray-900 dark:text-gray-100">
                 AI Model
               </label>
-              <Select onValueChange={(value) => setModel(value)}>
+                    <Select onValueChange={(value) => setModel(value)}>
                 <SelectTrigger className="w-full border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800">
-                  <SelectValue placeholder="Select AI Model" />
-                </SelectTrigger>
-                <SelectContent>
-                  {Constants?.AiModelList.map((model, index) => (
+                            <SelectValue placeholder="Select AI Model" />
+                        </SelectTrigger>
+                        <SelectContent>
+                            {Constants?.AiModelList.map((model, index) => (
                     <SelectItem value={model.name} key={index}>
                       <div className="flex items-center gap-2">
                         <div className="w-6 h-6 overflow-hidden bg-gray-100 dark:bg-gray-800 flex items-center justify-center">
@@ -208,11 +208,11 @@ function ImageUpload() {
                           />
                         </div>
                         <span>{model.name}</span>
-                      </div>
-                    </SelectItem>
-                  ))}
-                </SelectContent>
-              </Select>
+                                    </div>
+                                </SelectItem>
+                            ))}
+                        </SelectContent>
+                    </Select>
             </div>
 
             <div className="space-y-2">
@@ -229,7 +229,7 @@ function ImageUpload() {
                 any specific requirements.
               </p>
             </div>
-          </div>
+            </div>
         </div>
       </div>
 
