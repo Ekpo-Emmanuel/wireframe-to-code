@@ -4,7 +4,7 @@
 
 ## 🚀 Overview
 
-Ai Pixel Code is an AI-powered application that transforms wireframes and design mockups into production-ready code. Using advanced AI technology, it analyzes your design images and generates clean, responsive code instantly, saving developers and designers countless hours of manual coding.
+Ai Pixel Code is an AI-powered application that transforms wireframes and design mockups into production-ready code. Using AI, it analyzes your design images and generates clean, responsive code instantly, saving developers and designers countless hours of manual coding.
 
 ## ✨ Features
 
